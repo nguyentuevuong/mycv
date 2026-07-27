@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Nguyễn Văn Vương</title>
+    <title>CV - Nguyen Van Vuong</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -15,130 +15,167 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 14pt;
-            line-height: 1.6;
-            color: #1e293b;
-            background: #fff;
-            padding: 40pt;
+            font-size: 13pt;
+            line-height: 1.5;
+            color: #334155;
+            background: #eef2f7;
+            padding: 28pt 20pt;
         }
 
         @page {
             size: A4;
-            margin: auto;
-        }
-
-        @media print {
-            body {
-                font-size: 13pt;
-                line-height: 1.55;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .no-break {
-                page-break-inside: avoid;
-            }
-            .page-break-before {
-                page-break-before: always;
-                break-before: page;
-                padding-top: 40pt;
-            }
-            .experience-section {
-                page-break-before: always;
-                break-before: page;
-                padding-top: 40pt;
-            }
-            .highlights {
-                border-top: 1px solid #e2e8f0;
-            }
-            .highlight-item {
-                border-right-color: #e2e8f0;
-            }
+            margin: 0;
         }
 
         .container {
-            max-width: 190mm;
+            width: 100%;
+            max-width: 270mm;
             margin: 0 auto;
-            padding: 0 4mm;
+            background: #fff;
+            /* border-radius: 14px; */
+            box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+            overflow: hidden;
+        }
+
+        .container-inner {
+            padding: 0 30pt 26pt 30pt;
         }
 
         /* ===== HEADER ===== */
         .header {
-            text-align: center;
-            padding-bottom: 14px;
-            margin-bottom: 16px;
-            border-bottom: 2px solid #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 28pt 30pt;
+            margin-bottom: 22pt;
+            background: linear-gradient(120deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%);
+            position: relative;
+        }
+
+        .header-image img {
+            width: 128px;
+            height: 128px;
+            /* border-radius: 50%; */
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .header-text {
+            flex-grow: 1;
+            text-align: left;
         }
 
         .header h1 {
-            font-size: 16pt;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
+            font-size: 20pt;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.8px;
+            line-height: 1.1;
+            margin-bottom: 3pt;
         }
 
         .header .tagline {
-            font-size: 12pt;
-            color: #64748b;
-            font-weight: 400;
-            margin-top: 3px;
-            margin-bottom: 6px;
+            font-size: 10.5pt;
+            color: #bfdbfe;
+            font-weight: 600;
+            margin-bottom: 4pt;
+            letter-spacing: 0.3px;
+        }
+
+        .header .experience-years {
+            display: inline-block;
+            font-size: 9pt;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2pt 8pt;
+            border-radius: 4pt;
+            margin-bottom: 10pt;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
-            gap: 6px 18px;
-            font-size: 11pt;
-            color: #64748b;
+            align-items: center;
+            row-gap: 4pt;
+            font-size: 9.5pt;
+            color: #e0e7ff;
+            line-height: 1.5;
         }
 
         .contact-info span {
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contact-info span:not(:last-child)::after {
+            content: '·';
+            color: #60a5fa;
+            font-weight: 700;
+            margin: 0 9pt;
         }
 
         /* ===== SUMMARY ===== */
         .summary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 24px;
-            margin-bottom: 16px;
-            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 9pt;
+            margin: 0 auto 20pt auto;
+            padding: 16pt 18pt;
             background: #f8fafc;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
+            /* border-radius: 10px; */
+            border: 1px solid #e8edf3;
+            max-width: 100%;
         }
 
         .summary-item {
-            font-size: 11pt;
-            color: #334155;
-            line-height: 1.55;
+            font-size: 10.5pt;
+            color: #475569;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 9pt;
+        }
+
+        .summary-item::before {
+            content: '';
+            width: 6pt;
+            height: 6pt;
+            /* border-radius: 50%; */
+            background: #2563eb;
+            margin-top: 5pt;
+            flex-shrink: 0;
         }
 
         .summary-item strong {
             color: #0f172a;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* ===== SECTION ===== */
         .section {
-            margin-bottom: 16px;
+            margin-bottom: 18pt;
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 10pt;
+            margin-bottom: 11pt;
         }
 
         .section-header h2 {
-            font-size: 12pt;
-            font-weight: 700;
+            font-size: 11.5pt;
+            font-weight: 800;
             color: #0f172a;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.4px;
+            padding-left: 10pt;
+            border-left: 4px solid #2563eb;
         }
 
         .section-header::after {
@@ -150,162 +187,180 @@
 
         /* ===== HIGHLIGHTS ===== */
         .highlights {
-            display: flex;
-            gap: 0;
-            margin-bottom: 16px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10pt;
+            margin-bottom: 18pt;
         }
 
         .highlight-item {
-            flex: 1;
             text-align: center;
-            padding: 10px 6px;
-            border-right: 1px solid #e2e8f0;
-        }
-
-        .highlight-item:last-child {
-            border-right: none;
+            padding: 14pt 8pt;
+            background: #f8fafc;
+            /* border-radius: 10px; */
+            border: 1px solid #e8edf3;
         }
 
         .highlight-item .value {
-            font-size: 20pt;
-            font-weight: 800;
-            color: #0f172a;
+            font-size: 21pt;
+            font-weight: 900;
+            color: #2563eb;
             display: block;
-            line-height: 1.2;
+            line-height: 1;
+            margin-bottom: 5pt;
         }
 
         .highlight-item .label {
-            font-size: 11pt;
+            font-size: 8.5pt;
             color: #64748b;
-            font-weight: 500;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-top: 2px;
             display: block;
+            line-height: 1.3;
         }
 
         /* ===== SKILLS ===== */
         .skill-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 6px 20px;
+            gap: 12pt 18pt;
         }
 
         .skill-category {
-            margin-bottom: 2px;
+            margin-bottom: 0;
         }
 
         .skill-category-title {
-            font-weight: 600;
+            font-weight: 800;
             color: #0f172a;
-            font-size: 11pt;
-            margin-bottom: 3px;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 7pt;
+            padding-bottom: 4pt;
+            border-bottom: 2px solid #e2e8f0;
         }
 
         .skills-list {
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 3px 6px;
+            gap: 5pt 8pt;
         }
 
         .skills-list li {
             margin: 0;
-            padding: 0;
-            font-size: 11pt;
-            color: #475569;
+            padding: 3pt 0;
+            font-size: 10.5pt;
+            color: #5a6c7d;
+            line-height: 1.4;
         }
 
         .skills-list .primary {
-            font-weight: 600;
-            color: #0f172a;
+            font-weight: inherit;
+            color: inherit;
         }
 
         /* ===== EXPERIENCE ===== */
         .experience-item {
-            margin-bottom: 14px;
-            padding-bottom: 10px;
+            margin-bottom: 14pt;
+            padding-bottom: 12pt;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .experience-item:last-child {
             margin-bottom: 0;
             padding-bottom: 0;
+            border-bottom: none;
         }
 
         .exp-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 6pt;
+            flex-wrap: wrap;
+            gap: 8pt;
         }
 
         .exp-role {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 11pt;
-            color: #0f172a;
+            color: #1a202c;
         }
 
         .exp-company {
-            font-weight: 500;
-            color: #475569;
-            font-size: 12pt;
+            font-weight: 600;
+            color: #2563eb;
+            font-size: 11pt;
         }
 
         .exp-period {
-            font-size: 12pt;
-            color: #94a3b8;
-            font-weight: 500;
+            font-size: 10.5pt;
+            color: #9ca3af;
+            font-weight: 600;
             white-space: nowrap;
+            background: #f3f4f6;
+            padding: 2pt 6pt;
+            /* border-radius: 4pt; */
         }
 
         .exp-bullets {
-            margin: 3px 0;
+            margin: 7pt 0;
             list-style: none;
         }
 
         .exp-bullets li {
-            margin: 1px 0;
-            padding-left: 12px;
+            margin: 3pt 0;
+            padding-left: 14pt;
             position: relative;
-            font-size: 11pt;
-            color: #334155;
-            line-height: 1.55;
+            font-size: 10.5pt;
+            color: #475569;
+            line-height: 1.6;
         }
 
         .exp-bullets li::before {
-            content: '–';
+            content: '▸';
             position: absolute;
-            left: 0;
-            color: #94a3b8;
-            font-weight: 600;
+            left: 2pt;
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 9pt;
         }
 
         .impact {
-            margin: 4px 0;
-            padding: 3px 8px;
-            background: #f0fdf4;
-            border-left: 2px solid #22c55e;
-            font-size: 12pt;
-            color: #166534;
-            line-height: 1.5;
+            margin: 7pt 0;
+            padding: 8pt 10pt;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f7fee7 100%);
+            border-left: 3px solid #10b981;
+            font-size: 10.5pt;
+            color: #065f46;
+            line-height: 1.6;
+            /* border-radius: 4pt; */
         }
 
         .impact strong {
-            font-weight: 600;
+            font-weight: 700;
+            color: #047857;
         }
 
         /* Project table */
         .project-list {
-            margin-top: 5px;
+            margin-top: 8pt;
             list-style: none;
+            background: #f8fafc;
+            /* border-radius: 6pt; */
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
         }
 
         .project-list li {
             display: flex;
-            padding: 3px 0;
-            border-bottom: 1px solid #f1f5f9;
-            font-size: 12pt;
-            line-height: 1.45;
+            padding: 6pt 8pt;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 10.5pt;
+            line-height: 1.5;
         }
 
         .project-list li:last-child {
@@ -313,95 +368,150 @@
         }
 
         .project-name {
-            width: 20%;
-            font-weight: 600;
-            color: #1e40af;
+            width: 18%;
+            font-weight: 700;
+            color: #2563eb;
             flex-shrink: 0;
         }
 
         .project-tech {
-            width: 45%;
-            color: #64748b;
+            width: 48%;
+            color: #5a6c7d;
+            font-size: 10pt;
         }
 
         .project-role {
-            width: 35%;
-            color: #475569;
+            width: 34%;
+            color: #1a202c;
+            font-weight: 600;
+            font-size: 10pt;
         }
 
         .project-list-header {
             display: flex;
-            padding: 3px 0;
-            border-bottom: 1px solid #e2e8f0;
-            font-size: 11pt;
-            font-weight: 600;
-            color: #64748b;
+            padding: 7pt 8pt;
+            background: #eef2f8;
+            border-bottom: 1px solid #dbe2ec;
+            font-size: 9pt;
+            font-weight: 800;
+            color: #475569;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
 
         .project-list-header .project-name {
-            color: #64748b;
+            color: #1a202c;
         }
 
         /* ===== EDUCATION ===== */
         .edu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6px 16px;
+            gap: 10pt;
         }
 
         .edu-item {
-            padding: 8px 10px;
+            padding: 12pt 14pt;
             background: #f8fafc;
-            border-radius: 4px;
-            border: 1px solid #f1f5f9;
+            /* border-radius: 10px; */
+            border: 1px solid #e8edf3;
+            border-left: 4px solid #2563eb;
         }
 
         .edu-school {
-            font-weight: 600;
-            color: #0f172a;
+            font-weight: 800;
+            color: #1a202c;
             font-size: 11pt;
+            margin-bottom: 4pt;
         }
 
         .edu-details {
-            font-size: 12pt;
-            color: #64748b;
-            margin-top: 1px;
+            font-size: 10.5pt;
+            color: #5a6c7d;
+            margin-top: 0;
+            line-height: 1.5;
         }
 
         .edu-period {
-            font-size: 11pt;
-            color: #94a3b8;
-            font-weight: 500;
-            margin-top: 2px;
+            font-size: 10pt;
+            color: #9ca3af;
+            font-weight: 600;
+            margin-top: 5pt;
         }
 
         /* ===== GITHUB STRIP ===== */
         .github-strip {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 8px 0;
-            background: #0f172a;
-            border-radius: 6px;
-            font-size: 12pt;
-            margin-top: 8px;
-            margin-bottom: 4px;
+            align-items: center;
+            gap: 28pt;
+            padding: 14pt 18pt;
+            background: linear-gradient(120deg, #0f172a 0%, #1e3a8a 100%);
+            /* border-radius: 12px; */
+            font-size: 10pt;
+            margin-top: 18pt;
         }
 
         .github-item {
-            color: #94a3b8;
+            color: #cbd5e1;
+            text-align: center;
         }
 
         .github-item .val {
-            font-weight: 600;
-            color: #e2e8f0;
+            font-weight: 900;
+            color: #60a5fa;
+            font-size: 13pt;
+            display: block;
+            margin-bottom: 2pt;
         }
 
         .page-break-before {
             page-break-before: always;
             break-before: page;
+        }
+
+        /* ===== PRINT (placed last so it overrides base rules) ===== */
+        @media print {
+            html, body {
+                font-size: 12.5pt;
+                line-height: 1.5;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: #fff;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                background: #fff;
+                max-width: none;
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                overflow: visible;
+            }
+            .header {
+                border-radius: 0;
+                padding-left: 14pt;
+                padding-right: 14pt;
+            }
+            .container-inner {
+                padding-left: 21pt;
+                padding-right: 21pt;
+            }
+            .no-break {
+                page-break-inside: avoid;
+            }
+            .page-break-before {
+                page-break-before: always;
+                break-before: page;
+                padding-top: 32pt;
+            }
+            .experience-section {
+                page-break-before: always;
+                break-before: page;
+                padding-top: 32pt;
+            }
         }
     </style>
 </head>
@@ -409,27 +519,28 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>NGUYỄN VĂN VƯƠNG</h1>
-            <div class="tagline">Senior Fullstack Developer | Tech Lead | 13 năm kinh nghiệm</div>
-            <div class="contact-info">
-                <span>nguyentuevuong@gmail.com</span>
-                <span>·</span>
-                <span>(094) 330-9212</span>
-                <span>·</span>
-                <span>nhanvuong.vn</span>
-                <span>·</span>
-                <span>Hà Nội, Việt Nam</span>
-                <span>·</span>
-                <span>github.com/nguyentuevuong</span>
+            <div class="header-image">
+                <img src="https://avatars.githubusercontent.com/u/23444528?v=4" alt="Nguyen Van Vuong">
+            </div>
+            <div class="header-text">
+                <h1>NGUYEN VAN VUONG</h1>
+                <div class="tagline">Senior Fullstack Developer | Software Architect | Tech Lead</div>
+                <div class="experience-years">13 Years of Experience</div>
+                <div class="contact-info">
+                    <span>nguyentuevuong@nhanvuong.vn</span>
+                    <span>(094) 330-9212</span>
+                    <span>Hanoi, Vietnam</span>
+                    <span>nhanvuong.vn</span>
+                    <span>github.com/nguyentuevuong</span>
+                </div>
             </div>
         </div>
 
+        <div class="container-inner">
         <!-- Summary -->
         <div class="summary">
-            <div class="summary-item"><strong>13 năm kinh nghiệm</strong> phát triển phần mềm (2012–nay), chuyên về Fullstack Development với lộ trình: Developer → Technical Leader → Team Lead → Project Manager</div>
-            <div class="summary-item"><strong>10+ enterprise projects</strong> delivery thành công, quản lý team 10+ developers tại VCI, 32+ developers tại Samsung SDS</div>
-            <div class="summary-item">Chuyên gia kiến trúc <strong>Microservices, CQRS, Clean Architecture</strong> trên .NET/C# và Java/Spring Boot</div>
-            <div class="summary-item">Chứng chỉ <strong>PMP</strong>, 5,000+ commits trên 178+ repositories, open source contributor nổi bật</div>
+            <div class="summary-item"><strong>13+ years</strong> designing and implementing large-scale Distributed Systems with proven expertise in Microservices, CQRS, Clean Architecture, and Domain-Driven Design on .NET/C# and Java/Spring Boot platforms.</div>
+            <div class="summary-item"><strong>Technical Leader</strong> with proven track record: 10+ Enterprise projects, managed teams of 32+ developers, implemented end-to-end Microservices infrastructure, and contributed 5,000+ commits to Open Source. PMP Certified.</div>
         </div>
 
         <!-- Highlights -->
@@ -444,7 +555,7 @@
             </div>
             <div class="highlight-item">
                 <span class="value">5K+</span>
-                <span class="label">Total Commits</span>
+                <span class="label">GitHub Commits</span>
             </div>
             <div class="highlight-item">
                 <span class="value">178+</span>
@@ -458,7 +569,7 @@
 
         <!-- Skills -->
         <div class="section">
-            <div class="section-header"><h2>Kỹ Năng</h2></div>
+            <div class="section-header"><h2>Skills</h2></div>
             <div class="skill-grid">
                 <div class="skill-category">
                     <div class="skill-category-title">Frontend</div>
@@ -489,7 +600,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-category-title">DevOps & Cloud</div>
+                    <div class="skill-category-title">DevOps &amp; Cloud</div>
                     <ul class="skills-list">
                         <li><span class="primary">Docker</span> · Kubernetes</li>
                         <li><span class="primary">AWS</span> · Nginx · Cloudflare</li>
@@ -497,7 +608,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <div class="skill-category-title">Security & AI</div>
+                    <div class="skill-category-title">Security &amp; AI</div>
                     <ul class="skills-list">
                         <li>OAuth2 · OpenID Connect · MFA</li>
                         <li>LangChain · LLM · RAG</li>
@@ -517,7 +628,7 @@
 
         <!-- Experience -->
         <div class="section experience-section">
-            <div class="section-header"><h2>Kinh Nghiệm Làm Việc</h2></div>
+            <div class="section-header"><h2>Work Experience</h2></div>
 
             <!-- VCI -->
             <div class="experience-item no-break">
@@ -526,24 +637,24 @@
                         <span class="exp-role">Tech Lead / Senior Fullstack Developer</span>
                         <span class="exp-company"> — VCI Digital</span>
                     </div>
-                    <span class="exp-period">2026 – Nay</span>
+                    <span class="exp-period">2026 – Present</span>
                 </div>
                 <ul class="exp-bullets">
-                    <li>Tech Lead cho <strong>7+ enterprise projects</strong> (IMS, EMS, CMS, HRM, Approval Canvas Pro, tc-auth-core)</li>
-                    <li>Thiết kế kiến trúc <strong>Microservices, CQRS, Clean Architecture</strong> trên .NET/C# cho 3 hệ thống lớn</li>
-                    <li>Phát triển Frontend với <strong>React 18, Angular 17, TypeScript</strong> cho 7,200+ commits</li>
-                    <li>Tích hợp hạ tầng <strong>AWS, Docker, Kubernetes, CI/CD</strong> cho 5+ projects</li>
-                    <li>Quản lý team <strong>10+ developers</strong>, code review, kiến trúc kỹ thuật</li>
+                    <li>Tech Lead for <strong>6 enterprise projects</strong> (IMS, EMS, CMS, HRM, AWF, ACS)</li>
+                    <li>Designed <strong>Microservices, CQRS, Clean Architecture</strong> on .NET/C# for 3 large-scale systems</li>
+                    <li>Frontend development with <strong>React 18, Angular 17, TypeScript</strong> across enterprise modules</li>
+                    <li>Infrastructure integration <strong>AWS, Docker, Kubernetes, CI/CD</strong> for 5+ projects</li>
+                    <li>Managed <strong>10+ developers</strong>, code review, and technical architecture</li>
                 </ul>
-                <div class="impact"><strong>Impact:</strong> Dẫn dắt 7+ hệ thống enterprise, triển khai thành công hạ tầng Microservices + CI/CD cho toàn bộ portfolio</div>
+                <div class="impact"><strong>Impact:</strong> Led 6 enterprise systems, successfully deployed Microservices + CI/CD infrastructure across entire portfolio</div>
                 <ul class="project-list">
-                    <li class="project-list-header"><span class="project-name">Dự án</span><span class="project-tech">Công nghệ</span><span class="project-role">Vai trò</span></li>
-                    <li><span class="project-name">IMS</span><span class="project-tech">.NET/C#, CQRS, React 18, Azure SQL, Docker</span><span class="project-role">Tech Lead / Kiến trúc sư</span></li>
-                    <li><span class="project-name">EMS</span><span class="project-tech">.NET/C#, gRPC, CQRS, React 18, Azure SQL</span><span class="project-role">Tech Lead / Kiến trúc sư</span></li>
+                    <li class="project-list-header"><span class="project-name">Project</span><span class="project-tech">Technology</span><span class="project-role">Role</span></li>
+                    <li><span class="project-name">IMS</span><span class="project-tech">.NET/C#, CQRS, React 18, Azure SQL, Docker</span><span class="project-role">Tech Lead / Architect</span></li>
+                    <li><span class="project-name">EMS</span><span class="project-tech">.NET/C#, gRPC, CQRS, React 18, Azure SQL</span><span class="project-role">Tech Lead / Architect</span></li>
                     <li><span class="project-name">CMS</span><span class="project-tech">.NET/C#, React 18, TypeScript, SQL Server</span><span class="project-role">Tech Lead</span></li>
-                    <li><span class="project-name">HRM</span><span class="project-tech">Angular 17, TypeScript, NgRx, SQL Server, Docker</span><span class="project-role">Tech Lead – Frontend chính</span></li>
-                    <li><span class="project-name">Approval Canvas Pro</span><span class="project-tech">React 18, TypeScript, Redux Toolkit, TailwindCSS</span><span class="project-role">Tech Lead – Workflow phê duyệt</span></li>
-                    <li><span class="project-name">tc-auth-core</span><span class="project-tech">.NET/C#, OAuth2, OpenID Connect, MFA, IdentityServer4</span><span class="project-role">Tech Lead – Xác thực phân tán</span></li>
+                    <li><span class="project-name">HRM</span><span class="project-tech">Angular 17, TypeScript, NgRx, SQL Server, Docker</span><span class="project-role">Tech Lead – Lead Frontend</span></li>
+                    <li><span class="project-name">AWF</span><span class="project-tech">React 18, TypeScript, Redux Toolkit, TailwindCSS</span><span class="project-role">Tech Lead – Approval Workflow System</span></li>
+                    <li><span class="project-name">ACS</span><span class="project-tech">.NET/C#, OAuth2, OpenID Connect, MFA, IdentityServer4</span><span class="project-role">Tech Lead – Auth Service</span></li>
                 </ul>
             </div>
 
@@ -557,17 +668,17 @@
                     <span class="exp-period">06/2023 – 11/2025</span>
                 </div>
                 <ul class="exp-bullets">
-                    <li><strong>Technical Lead</strong> cho Enterprise Endpoint Security Solution (quản lý thiết bị đầu cuối doanh nghiệp)</li>
-                    <li><strong>Phát triển Frontend</strong> với Vue.js 2/3, Bootstrap CSS (2,500+ commits)</li>
-                    <li><strong>Phát triển Backend</strong> với Java (Spring Boot), tích hợp Oracle Database 19c</li>
-                    <li><strong>Xây dựng module</strong>: device management, risk alerting, attack trend analysis</li>
-                    <li><strong>Tích hợp SIEM</strong>, log management, real-time alerting</li>
-                    <li>Quản lý team <strong>5+ developers</strong>, code review, đảm bảo chất lượng sản phẩm</li>
+                    <li><strong>Technical Lead</strong> for Enterprise Endpoint Security Solution (corporate device management)</li>
+                    <li><strong>Frontend development</strong> with Vue.js 2/3, Bootstrap CSS (2,500+ commits)</li>
+                    <li><strong>Backend development</strong> with Java (Spring Boot), Oracle Database 19c integration</li>
+                    <li><strong>Module development</strong>: device management, risk alerting, attack trend analysis</li>
+                    <li><strong>SIEM integration</strong>, log management, real-time alerting</li>
+                    <li>Managed <strong>5+ developers</strong>, code review, and product quality assurance</li>
                 </ul>
-                <div class="impact"><strong>Impact:</strong> Dẫn dắt giải pháp bảo mật endpoint doanh nghiệp, tích hợp SIEM cho real-time alerting</div>
+                <div class="impact"><strong>Impact:</strong> Led enterprise endpoint security solution, integrated SIEM for real-time alerting</div>
                 <ul class="project-list">
-                    <li class="project-list-header"><span class="project-name">Dự án</span><span class="project-tech">Công nghệ</span><span class="project-role">Vai trò</span></li>
-                    <li><span class="project-name">Endpoint Security Suite</span><span class="project-tech">Java (Spring Boot), Oracle 19c, Vue.js 2/3, JPA/Hibernate</span><span class="project-role">Technical Lead – Kiến trúc FE, quản lý thiết bị</span></li>
+                    <li class="project-list-header"><span class="project-name">Project</span><span class="project-tech">Technology</span><span class="project-role">Role</span></li>
+                    <li><span class="project-name">Endpoint Security Suite</span><span class="project-tech">Java (Spring Boot), Oracle 19c, Vue.js 2/3, JPA/Hibernate</span><span class="project-role">Technical Lead – FE Architecture, Device Management</span></li>
                 </ul>
             </div>
 
@@ -581,15 +692,15 @@
                     <span class="exp-period">2021 – 2023</span>
                 </div>
                 <ul class="exp-bullets">
-                    <li><strong>Technical Leader</strong> cho Mortgage Eligibility Assessment Platform (hệ thống đánh giá tiềm năng vay Nhật Bản)</li>
-                    <li><strong>Frontend</strong> với Vue.js 2, Bootstrap CSS (1,500+ commits); <strong>Backend</strong> Java (Spring Boot), Oracle 12c</li>
-                    <li><strong>Xây dựng thuật toán</strong> đánh giá tiềm năng vay, mô hình chấm điểm tín dụng</li>
-                    <li><strong>Triển khai workflow</strong> đánh giá thời gian thực; quản lý team <strong>3+ developers</strong></li>
+                    <li><strong>Technical Leader</strong> for Mortgage Eligibility Assessment Platform (Japan real estate lending assessment system)</li>
+                    <li><strong>Frontend</strong> with Vue.js 2, Bootstrap CSS (1,500+ commits); <strong>Backend</strong> Java (Spring Boot), Oracle 12c</li>
+                    <li><strong>Built algorithm</strong> for lending potential assessment, credit scoring model</li>
+                    <li><strong>Deployed real-time assessment workflow</strong>; managed <strong>3+ developers</strong></li>
                 </ul>
-                <div class="impact"><strong>Impact:</strong> Xây dựng thành công hệ thống đánh giá tín dụng phục vụ thị trường bất động sản Nhật Bản</div>
+                <div class="impact"><strong>Impact:</strong> Successfully built credit assessment system serving Japan real estate market</div>
                 <ul class="project-list">
-                    <li class="project-list-header"><span class="project-name">Dự án</span><span class="project-tech">Công nghệ</span><span class="project-role">Vai trò</span></li>
-                    <li><span class="project-name">Green Card System</span><span class="project-tech">Java (Spring Boot), Oracle 12c, Vue.js 2, JPA/Hibernate</span><span class="project-role">Technical Leader – Thuật toán tín dụng</span></li>
+                    <li class="project-list-header"><span class="project-name">Project</span><span class="project-tech">Technology</span><span class="project-role">Role</span></li>
+                    <li><span class="project-name">Green Card System</span><span class="project-tech">Java (Spring Boot), Oracle 12c, Vue.js 2, JPA/Hibernate</span><span class="project-role">Technical Leader – Credit Algorithm</span></li>
                 </ul>
             </div>
 
@@ -598,21 +709,21 @@
                 <div class="exp-header">
                     <div>
                         <span class="exp-role">Developer / Technical Leader</span>
-                        <span class="exp-company"> — Nittsu System VietNam</span>
+                        <span class="exp-company"> — Nittsu System Vietnam</span>
                     </div>
                     <span class="exp-period">10/2016 – 04/2021</span>
                 </div>
                 <ul class="exp-bullets">
-                    <li><strong>Technical Leader</strong> cho các dự án Java/Vue.js cho khách hàng Nhật Bản</li>
-                    <li><strong>Thiết kế UI</strong>, input controls, validation plugins; <strong>phát triển video call module</strong> (IPO Health Life)</li>
-                    <li>Hỗ trợ training thành viên mới; phát triển từ Developer lên Technical Leader</li>
+                    <li><strong>Technical Leader</strong> for Java/Vue.js projects for Japanese clients</li>
+                    <li><strong>UI design</strong>, input controls, validation plugins; <strong>video call module development</strong> (IPO Health Life)</li>
+                    <li>Training and mentoring new team members; progressed from Developer to Technical Leader</li>
                 </ul>
-                <div class="impact"><strong>Impact:</strong> 4.5 năm tại Nittsu, dẫn dắt nhiều dự án khách hàng Nhật, phát triển từ Developer lên Technical Leader</div>
+                <div class="impact"><strong>Impact:</strong> 4.5 years at Nittsu, led multiple Japanese client projects, progressed from Developer to Technical Leader</div>
                 <ul class="project-list">
-                    <li class="project-list-header"><span class="project-name">Dự án</span><span class="project-tech">Công nghệ</span><span class="project-role">Vai trò</span></li>
+                    <li class="project-list-header"><span class="project-name">Project</span><span class="project-tech">Technology</span><span class="project-role">Role</span></li>
                     <li><span class="project-name">IPO (Health Life)</span><span class="project-tech">Java (Spring MVC), Vue.js 2, TypeScript, JEE 8, MySQL</span><span class="project-role">Technical Leader</span></li>
-                    <li><span class="project-name">UK Mobile</span><span class="project-tech">Java (Spring MVC), Vue.js 2, JEE 8, Oracle</span><span class="project-role">Technical Leader – UI components</span></li>
-                    <li><span class="project-name">Universal Kinjiro</span><span class="project-tech">Java (Spring MVC), TypeScript, JEE 8, MS SQL Server</span><span class="project-role">Technical Leader – Core modules</span></li>
+                    <li><span class="project-name">UK Mobile</span><span class="project-tech">Java (Spring MVC), Vue.js 2, JEE 8, Oracle</span><span class="project-role">Technical Leader – UI Components</span></li>
+                    <li><span class="project-name">Universal Kinjiro</span><span class="project-tech">Java (Spring MVC), TypeScript, JEE 8, MS SQL Server</span><span class="project-role">Technical Leader – Core Modules</span></li>
                 </ul>
             </div>
 
@@ -623,27 +734,18 @@
                     <span class="exp-period">04/2016 – 09/2016</span>
                 </div>
                 <ul class="exp-bullets">
-                    <li><strong>Supporter (onsite)</strong> cho khách hàng Nhật. Hỗ trợ modern browser, fix bugs cho dự án KINJIROU (C#, .NET WebForms)</li>
+                    <li><strong>Supporter (onsite)</strong> for Japanese client. Modern browser support, bug fixes for KINJIROU project (C#, .NET WebForms)</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
-                    <div><span class="exp-role">Developer</span> <span class="exp-company">— RNET VietNam Jsc</span></div>
-                    <span class="exp-period">03/2014 – 09/2016</span>
+                    <div><span class="exp-role">Developer / Full Stack Developer</span> <span class="exp-company">— RNET Vietnam Jsc &amp; VTD Ltd., Co</span></div>
+                    <span class="exp-period">01/2013 – 03/2016</span>
                 </div>
                 <ul class="exp-bullets">
-                    <li><strong>Phát triển, triển khai và bảo trì</strong> ứng dụng web nội bộ. Design & code cho DOTNETNUKE framework (C#, ASP.NET WebForms, SQL Server)</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div><span class="exp-role">Full Stack Developer</span> <span class="exp-company">— VTD Ltd., Co</span></div>
-                    <span class="exp-period">01/2013 – 02/2014</span>
-                </div>
-                <ul class="exp-bullets">
-                    <li><strong>Full stack developer</strong> với 2 thành viên khác. Thiết kế, code và bảo trì hệ thống Adverse Drug Reactions monitoring (C#, ASP.NET MVC 4, SQL Server)</li>
+                    <li><strong>Development, deployment and maintenance</strong> of internal web applications on DOTNETNUKE framework (C#, ASP.NET WebForms, SQL Server) at RNET Vietnam</li>
+                    <li><strong>Full stack developer</strong> with 2 other team members; designed, coded and maintained the Adverse Drug Reactions monitoring system (C#, ASP.NET MVC 4, SQL Server) at VTD</li>
                 </ul>
             </div>
 
@@ -651,23 +753,23 @@
             <div class="experience-item no-break page-break-before">
                 <div class="exp-header">
                     <div>
-                        <span class="exp-role">Open Source & Freelance</span>
-                        <span class="exp-company"> — Các dự án mở & tư vấn</span>
+                        <span class="exp-role">Open Source &amp; Freelance</span>
+                        <span class="exp-company"> — Open Source Projects &amp; Consulting</span>
                     </div>
-                    <span class="exp-period">2016 – Nay</span>
+                    <span class="exp-period">2016 – Present</span>
                 </div>
                 <ul class="exp-bullets">
                     <li><strong>15+ freelance projects</strong>: Vue.js/TypeScript apps, .NET Microservices, AI/ML, web scraping</li>
                     <li><strong>Open source</strong>: tabler (2,314 commits), nginx-proxy-manager (1,152 commits), BaGet (593 commits), OTP-Java (264 commits)</li>
-                    <li><strong>Cố vấn kỹ thuật</strong> cho 5+ startup projects</li>
+                    <li><strong>Technical consultant</strong> for 5+ startup projects</li>
                 </ul>
-                <div class="impact"><strong>Impact:</strong> 178+ repositories, 5,000+ commits. Top contributor cho tabler (Vue.js admin template phổ biến)</div>
+                <div class="impact"><strong>Impact:</strong> 178+ repositories, 5,000+ commits. Top contributor to tabler (popular Vue.js admin template)</div>
             </div>
         </div>
 
         <!-- Education -->
         <div class="section">
-            <div class="section-header"><h2>Giáo Dục & Chứng Chỉ</h2></div>
+            <div class="section-header"><h2>Education &amp; Certifications</h2></div>
             <div class="edu-grid">
                 <div class="edu-item">
                     <div class="edu-school">PMP — Project Management Institute</div>
@@ -675,7 +777,7 @@
                     <div class="edu-period">06/2023 – 06/2030</div>
                 </div>
                 <div class="edu-item">
-                    <div class="edu-school">Đại học Chu Văn An (ĐH Intracom)</div>
+                    <div class="edu-school">Chu Van An University (Intracom University)</div>
                     <div class="edu-details">B.Sc. Computer Science | IT | GPA: 7.72/10</div>
                     <div class="edu-period">08/2007 – 10/2012</div>
                 </div>
@@ -686,7 +788,8 @@
         <div class="github-strip">
             <span class="github-item"><span class="val">178+</span> Repositories</span>
             <span class="github-item"><span class="val">5,000+</span> Commits</span>
-            <span class="github-item"><span class="val">tabler</span> · nginx-proxy-manager · BaGet</span>
+            <span class="github-item"><span class="val">repo</span> UnoCSS · habit-ui · cloudflare-ddns</span>
+        </div>
         </div>
     </div>
 </body>
